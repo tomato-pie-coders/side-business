@@ -60,7 +60,7 @@ export const pageQuery = graphql`
       }
     }
     allContentfulPerson(
-      filter: { contentful_id: { eq: "15jwOBqpxqSAOy2eOO4S0m" } }
+      filter: { contentful_id: { eq: "7mv0if0HhrUL4tqg3jhvDi" } }
     ) {
       edges {
         node {
@@ -69,7 +69,7 @@ export const pageQuery = graphql`
             shortBio
           }
           title
-          heroImage: image {
+          heroImage {
             fluid(
               maxWidth: 1180
               maxHeight: 480

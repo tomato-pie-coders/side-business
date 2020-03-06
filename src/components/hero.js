@@ -1,6 +1,7 @@
 import React from "react";
 import Img from "gatsby-image";
 import styled from "@emotion/styled";
+import { graphql } from "gatsby";
 
 const Hero = styled.div`
   position: relative;
@@ -45,13 +46,17 @@ const Title = styled.h3`
   font-weight: bold;
 `;
 
-export default ({ data }) => (
-  <Hero>
-    <HeroImage alt={data.name} fluid={data.heroImage.fluid} />
-    <Details>
-      <Headline>{data.name}</Headline>
-      <Title>{data.title}</Title>
-      <Bio>{data.shortBio.shortBio}</Bio>
-    </Details>
-  </Hero>
-);
+export default props => {
+  const data = props.data.contentfulPerson;
+
+  return (
+    <Hero>
+      <HeroImage alt={data.name} fluid={data.heroImage.fluid} />
+      <Details>
+        <Headline>{data.name}</Headline>
+        <Title>{data.title}</Title>
+        <Bio>{data.shortBio.shortBio}</Bio>
+      </Details>
+    </Hero>
+  );
+};

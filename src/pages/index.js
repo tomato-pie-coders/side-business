@@ -1,5 +1,4 @@
 import React from "react";
-import { graphql } from "gatsby";
 import get from "lodash/get";
 import Helmet from "react-helmet";
 import Hero from "../components/hero";
@@ -14,7 +13,7 @@ class RootIndex extends React.Component {
   render() {
     const siteTitle = get(this, "props.data.site.siteMetadata.title");
     const posts = get(this, "props.data.allContentfulBlogPost.edges");
-    const [author] = get(this, "props.data.allContentfulPerson.edges");
+    const [hero] = get(this, "props.data.contentfulPerson.edges");
     let about = {
       title: "We love ducks",
       description: "Certain ducks more than other ducks."
@@ -27,7 +26,7 @@ class RootIndex extends React.Component {
       <Layout location={this.props.location}>
         <div style={{ background: "#fff" }}>
           <Helmet title={siteTitle} />
-          <Hero data={author.node} />
+          <Hero data={hero} />
           <About data={about} />
           <Testimonials />
           {/* <div className="wrapper">
@@ -72,26 +71,20 @@ export const pageQuery = graphql`
         }
       }
     }
-    allContentfulPerson(
-      filter: { contentful_id: { eq: "7mv0if0HhrUL4tqg3jhvDi" } }
-    ) {
-      edges {
-        node {
-          name
-          shortBio {
-            shortBio
-          }
-          title
-          heroImage {
-            fluid(
-              maxWidth: 1180
-              maxHeight: 480
-              resizingBehavior: PAD
-              background: "rgb:000000"
-            ) {
-              ...GatsbyContentfulFluid_tracedSVG
-            }
-          }
+    contentfulPerson(name: { eq: "Seth" }) {
+      name
+      shortBio {
+        shortBio
+      }
+      title
+      heroImage {
+        fluid(
+          maxWidth: 1180
+          maxHeight: 480
+          resizingBehavior: PAD
+          background: "rgb:000000"
+        ) {
+          ...GatsbyContentfulFluid_tracedSVG
         }
       }
     }

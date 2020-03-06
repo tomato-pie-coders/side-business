@@ -8,6 +8,7 @@ import ArticlePreview from "../components/article-preview";
 import Testimonials from "../components/testimonials";
 import About from "../components/about";
 import Details from "../components/details";
+import Contact from "../components/contact";
 
 class RootIndex extends React.Component {
   render() {
@@ -42,6 +43,7 @@ class RootIndex extends React.Component {
             </ul>
           </div> */}
           <Details data={details} />
+          <Contact />
         </div>
       </Layout>
     );

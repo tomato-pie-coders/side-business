@@ -8,7 +8,7 @@ b) AboutCompany (title description) - BOILERPLATE
 
 c) Testimonials - BOILERPLATE
 
-d) Why my company is different (why)
+d) Why my company is different (why) - BOILERPLATE
 
 e) Contact (form)
 

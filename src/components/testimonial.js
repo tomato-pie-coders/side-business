@@ -16,7 +16,6 @@ const Description = styled.p`
 `;
 
 const Testimonial = ({ title, description }) => {
-  console.log(title, description);
   return (
     <Card>
       <Title>{title}</Title>

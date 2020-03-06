@@ -6,18 +6,23 @@ import Hero from "../components/hero";
 import Layout from "../components/layout";
 import ArticlePreview from "../components/article-preview";
 import Testimonials from "../components/testimonials";
+import About from "../components/about";
 
 class RootIndex extends React.Component {
   render() {
     const siteTitle = get(this, "props.data.site.siteMetadata.title");
     const posts = get(this, "props.data.allContentfulBlogPost.edges");
     const [author] = get(this, "props.data.allContentfulPerson.edges");
-
+    let about = {
+      title: "We love ducks",
+      description: "Certain ducks more than other ducks."
+    };
     return (
       <Layout location={this.props.location}>
         <div style={{ background: "#fff" }}>
           <Helmet title={siteTitle} />
           <Hero data={author.node} />
+          <About data={about} />
           <Testimonials />
           <div className="wrapper">
             <h2 className="section-headline">Recent articles</h2>

@@ -2,7 +2,8 @@ NavBar
 
 1. index
 
-a) Hero
+a) Hero - BOILERPLATE
+
 b) AboutCompany (title description)
 
 c) Testimonials - BOILERPLATE

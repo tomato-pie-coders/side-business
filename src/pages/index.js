@@ -7,6 +7,7 @@ import Layout from "../components/layout";
 import ArticlePreview from "../components/article-preview";
 import Testimonials from "../components/testimonials";
 import About from "../components/about";
+import Details from "../components/details";
 
 class RootIndex extends React.Component {
   render() {
@@ -17,6 +18,10 @@ class RootIndex extends React.Component {
       title: "We love ducks",
       description: "Certain ducks more than other ducks."
     };
+    let details = {
+      title: "Why choose us?",
+      description: "We are a cool company"
+    };
     return (
       <Layout location={this.props.location}>
         <div style={{ background: "#fff" }}>
@@ -24,7 +29,7 @@ class RootIndex extends React.Component {
           <Hero data={author.node} />
           <About data={about} />
           <Testimonials />
-          <div className="wrapper">
+          {/* <div className="wrapper">
             <h2 className="section-headline">Recent articles</h2>
             <ul className="article-list">
               {posts.map(({ node }) => {
@@ -35,7 +40,8 @@ class RootIndex extends React.Component {
                 );
               })}
             </ul>
-          </div>
+          </div> */}
+          <Details data={details} />
         </div>
       </Layout>
     );

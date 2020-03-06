@@ -4,11 +4,11 @@ NavBar
 
 a) Hero - BOILERPLATE
 
-b) AboutCompany (title description)
+b) AboutCompany (title description) - BOILERPLATE
 
 c) Testimonials - BOILERPLATE
 
-d) Why my company is different
+d) Why my company is different (why)
 
 e) Contact (form)
 
